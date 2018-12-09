@@ -3,10 +3,9 @@
 		<div class="row align-items-center">
 			<div class="col-md-6">
 				<h1 class="display-4 bold-1">Family Therapy Services</h1>
-				<p class="lead">Something about what I do.</p>
 				<hr class="my-4">
-				<p>Actively seeing new patients and accepting of insurance.</p>
-				<a class="btn btn-primary btn-lg" href="#" role="button">Schedule Now</a>
+				<p>Actively seeing new patients. Most insurance accepted.</p>
+				<a class="btn btn-primary btn-lg" href="#form" role="button">Schedule Now</a>
 			</div>
 			<div class="col-md-6 d-none d-md-block">
 				<%= image_tag("family.png", class:"img-fluid") %>
@@ -14,17 +13,66 @@
 		</div>
 	</div>
 </div>
-<div class="container py-5">
+<div id="about" class="container py-5">
 	<h1 class="text-center">About Me</h1>
-	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	<div class="row align-items-center">
+		<div class="col-md-6 text-center">
+			<img src="http://fpoimg.com/300x250">
+		</div>
+		<div class="col-md-6">
+			My name is Tina Stillwell. I am a dedicated Therapist who is committed to client care. I help individuals seek personal growth and devlopment while teaching self-determination. My personal teaching process is about establishing boundaries and setting milestones.
+		</div>
+	</div>
 </div>
-<div class="container-fluid bg-purple py-5">
+<div class="container-fluid bg-purple py-5" id="help">
 	<div class="container">
-		<h1 class="text-center">How I help</h1>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		<h1 class="text-center text-white">Who I help</h1>
+		<p class="lead text-center text-white">I specialize in providing mental health services to children and adults in different life situations.</p>
+		<div class="row text-white">
+			<div class="col-md-6 offset-md-5">
+				<ul>
+					<li>Couples Counseling</li>
+					<li>Family Therapy</li>
+					<li>Adults</li>
+					<li>Adolescents</li>
+				</ul>
+			</div>
+		</div>
 	</div>
 </div>
 <div class="container py-5">
 	<h1 class="text-center">Preparing for your first visit</h1>
-	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	<div class="px-md-5 mx-md-5">
+		<ul>
+			<li>Each new patient is required to fill out an intake form. They can be downloaded here.</li>
+			<li>Please arrive 15 minutes early. Forms may be completed in our office before your appointment time</li>
+			<li>During your first session, I will try to make you feel as comfortably as possible and will ask some basic questions to develop an understanding of your situation and how best to treat it.
+			</li>
+			<li>At the end of your first session, I will provide you some next steps including a timeline for future sessions as well as things to work on while at home. Your second session will likely dive deeper into the specifics of the issues.</li>
+		</ul>
+	</div>
+</div>
+<div class="bg-greylight">
+	<div class="container py-5">
+		<h1 class="text-center">Contact</h1>
+		<p class="text-center">Office Hours: Monday-Saturday, <span class="font-weight-bold">by appointment only</span></p>
+		
+		<h3 class="text-center py-2">Request An Appointment</h3>
+		<!--  -->
+		<%= form_tag("/", method: "get", remote: true, class: 'appt-form m-auto', id: 'form') do %>
+		<%= label_tag(:fname, "First Name") %>
+		<%= text_field_tag(:fname, nil, class: 'form-control', required: true) %>
+		<%= label_tag(:lname, "Last Name") %>
+		<%= text_field_tag(:lname, nil, class: 'form-control', required: true) %>
+		<%= label_tag(:email) %>
+		<%= email_field(:user, :email, class: 'form-control', required: true) %>
+		<%= label_tag(:phone) %>
+		<%= telephone_field(:user, :phone, placeholder: 'xxx-xxx-xxxx', class: 'form-control', required: true) %>
+		<%= submit_tag("Submit", class: 'btn btn-primary mt-3') %>
+		<% end %>
+		<!--  -->
+		<div class="alert alert-success hide" role="alert">
+			A simple success alert—check it out!
+		</div>
+	</div>
 </div>
