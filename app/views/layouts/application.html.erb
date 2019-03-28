@@ -1,20 +1,54 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>TinaSite</title>
+
+<head>
+    <%= display_meta_tags site: 'Stillwell Counseling' %>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-  <body>
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "WebSite",
+        "url": "<%=request.original_url %>",
+        "name": "<% if (defined?(@pagetitle)).nil? %>TStillwell Counseling<% else %><%= @pagetitle %> <% end %>",
+        "description": "<% if (defined?(@pagetitle)).nil? %>Offering individual and family therapy services to Clay Center, KS.<% else %><%= @pagedescription %><% end %>",
+        "publisher": "TStillwell Counseling"
+    }
+    </script>
+    <!-- Google Tag Manager -->
+    <script>
+    (function(w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+            'gtm.start': new Date().getTime(),
+            event: 'gtm.js'
+        });
+        var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s),
+            dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src =
+            'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-T6SWWDW');
+    </script>
+    <!-- End Google Tag Manager -->
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T6SWWDW" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <div id="wrap">
-      <div id="main" class="clearfix">
-        <%= render 'layouts/nav' %>
-        <%= yield %>
-      </div>
+        <div id="main" class="clearfix">
+            <%= render 'layouts/nav' %>
+            <%= yield %>
+        </div>
     </div>
     <%= render 'layouts/footer' %>
-  </body>
+</body>
+
 </html>
