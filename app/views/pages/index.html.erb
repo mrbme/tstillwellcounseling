@@ -80,13 +80,8 @@
 <script type="text/javascript">
 $("#form").on("submit", (e) => {
     e.preventDefault();
-    $.post('https://hooks.zapier.com/hooks/catch/2194585/nnpyw0/', {
-        fname: $('#fname')[0].val,
-        lname: $('#lname')[0].val,
-        phone: $('#phone')[0].val,
-        email: $('#emails')[0].val
-    });
-    .done(function(data) {
+    const post = $.post( "https://hooks.zapier.com/hooks/catch/2194585/nnpyw0/", $( "#form" ).serialize() );
+    post.done( () => {
         $('#messages').removeClass('d-none').slideDown().show();
     });
 });
