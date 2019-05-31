@@ -1,5 +1,5 @@
 # Set the host name for URL creation
-SitemapGenerator::Sitemap.default_host = "https://www.tstillwellcounseling.com"
+SitemapGenerator::Sitemap.default_host = "https://tstillwellcounseling.com"
 
 SitemapGenerator::Sitemap.create do
   # Put links creation logic here.
@@ -28,5 +28,4 @@ SitemapGenerator::Sitemap.create do
   group(:compress => false) {
     add root_path, :priority => 0.7, :changefreq => 'weekly'
   }
-  end
 end
