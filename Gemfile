@@ -22,7 +22,8 @@ gem 'jquery-rails'
 gem 'http', '~> 4.0'
 gem 'bootstrap', '~> 4.1', '>= 4.1.3'
 gem 'meta-tags'
-
+gem 'sitemap_generator'
+gem 'meta-tags'
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
